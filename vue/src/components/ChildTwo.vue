@@ -1,13 +1,11 @@
 <script setup lang="ts">
-
-defineProps<{ count: number }>()
-
+defineProps<{ count: number; updateCount: () => void }>();
 </script>
 
 <template>
- <div className="card">Child Two
-    <div>Count is: {{count}}</div>
+  <div className="card">
+    Child Two
+    <div>{{ count }}</div>
+    <button @click="updateCount">Increment count</button>
   </div>
- 
 </template>
-
