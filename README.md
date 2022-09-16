@@ -2,7 +2,7 @@
 
 ![alt](./react-state.png)
 
-Uno podría pasar el estado como propiedades (props en react) a los componentes hijos, pero esto solo es recomendable hasta cierto punto, por ejemplo, una jerarquía de componentes de 3 niveles, como máximo. Si se requiere pasar el estado a componentes más profundos, se recomienda usar un estado global.
+Uno podría pasar el estado como propiedades (props en react) a los componentes hijos, pero esto solo es recomendable hasta cierto punto, por ejemplo, una jerarquía de componentes de 3 niveles, como máximo. Si se requiere pasar el estado a componentes más profundos, se recomienda usar un estado global. Cuando pasamos un prop de un componente a otro componente, y este a otro, y este a otro, se conoce como [prop drilling](https://frontend.adaitw.org/docs/react/react23).
 
 ### React
 
@@ -70,13 +70,11 @@ defineProps<{ count: number, updateCount: () => void }>()
 ### React
 
 En el ecosistema de React, existen muchas opciones de estado global. Algunas son Redux,
-zustand, jotai, recoil, y el propio Context API de React.
+[zustand](https://github.com/pmndrs/zustand), [jotai](https://jotai.org/), [recoil](https://recoiljs.org/), y el propio [Context API](https://reactjs.org/docs/context.html) de React.
 
 Con una libreria como estas, se puede crear un estade centralizado, y compartirlo entre componentes sin tener que pasar el estado a través props.
 
 ![alt](./global-state.png)
-
-En una jerarquía de 4 niveles, es mejor usar un estado global, como Redux, Zustand, Recoil, Jotai, o React.Context. Con una de estas librerías, el estado se consume de una forma similar a como se hace con las propiedades, pero el estado se almacena en un solo lugar, y los componentes hijos pueden acceder a él sin necesidad de pasarle las propiedades.
 
 Este tipo de estados no requieren de un componente padre, y pueden ser usados en cualquier parte de la aplicación.
 
