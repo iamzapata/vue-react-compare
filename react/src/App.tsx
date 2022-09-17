@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { ChildOne } from './ChildOne'
-import { ChildTwo } from './ChildTwo'
+import reactLogo from "./assets/react.svg";
+import { Local } from "./components/Local/LocalState";
+import { Global } from "./components/Global/GlobalState";
+import { GlobalComponent } from "./components/Global/GlobalComponent";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <div>
@@ -18,15 +15,14 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Increment count
-        </button>
+
+      <div className="grid">
+        <Local />
+        <Global />
       </div>
-      <ChildOne count={count}/>
-      <ChildTwo count={count}/>
+      <GlobalComponent name="🔴" />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

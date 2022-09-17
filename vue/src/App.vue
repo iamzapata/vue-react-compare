@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import LocalState from "./components/LocalState.vue";
-import GlobalState from "./components/GlobalState.vue";
-import GlobalComponent from "./components/GlobalComponent.vue";
+import LocalState from "./components/Local/LocalState.vue";
+import GlobalState from "./components/Global/GlobalState.vue";
+import GlobalComponent from "./components/Global/GlobalComponent.vue";
 </script>
 
 <template>
@@ -26,7 +26,7 @@ import GlobalComponent from "./components/GlobalComponent.vue";
 
 <style scoped>
 .logo {
-  height: 6em;
+  height: 3em;
   padding: 1.5em;
   will-change: filter;
 }
