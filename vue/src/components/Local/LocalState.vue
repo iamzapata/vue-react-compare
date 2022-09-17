@@ -2,12 +2,13 @@
 import ChildOne from "./ChildOne.vue";
 import ChildTwo from "./ChildTwo.vue";
 import GlobalComponent from "../Global/GlobalComponent.vue";
+import Button from "./Button.vue";
+
 import { ref } from "vue";
 
 const count = ref(0);
 
-// update count
-const updateCount = () => {
+const incrementCount = () => {
   count.value++;
 };
 </script>
@@ -15,10 +16,10 @@ const updateCount = () => {
 <template>
   <div class="card">
     <h2>Parent ➡️ Child State: {{ count }}</h2>
-    <button type="button" @click="updateCount">Increment count</button>
+    <Button :incrementCount="incrementCount" />
 
-    <ChildOne :count="count" :updateCount="updateCount" />
-    <ChildTwo :count="count" :updateCount="updateCount" />
+    <ChildOne :count="count" :incrementCount="incrementCount" />
+    <ChildTwo :count="count" :incrementCount="incrementCount" />
     <GlobalComponent name="🔵" />
   </div>
 </template>

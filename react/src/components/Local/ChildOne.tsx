@@ -1,3 +1,5 @@
+import { Button } from "./Button";
+
 export function ChildOne({
   count,
   incrementCount,
@@ -8,7 +10,7 @@ export function ChildOne({
   return (
     <div className="card">
       <h3>Child One: {count}</h3>
-      <button onClick={incrementCount}>Increment count</button>
+      <Button incrementCount={incrementCount} />
     </div>
   );
 }

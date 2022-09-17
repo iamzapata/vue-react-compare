@@ -40,24 +40,24 @@ import { ref } from 'vue'
 
 const count = ref(0)
 
-const updateCount = () => {
+const incrementCount = () => {
   count.value++
 }
 ...
-<VueChildComponent :count=count :updateCount=updateCount />
+<VueChildComponent :count=count :incrementCount=incrementCount />
 ```
 
-Dentro de `<VueChildComponent />` se puede actualizar el estado de `<App />` a través de la propiedad `updateCount`:
+Dentro de `<VueChildComponent />` se puede actualizar el estado de `<App />` a través de la propiedad `incrementCount`:
 
 ```js
-defineProps<{ count: number, updateCount: () => void }>()
+defineProps<{ count: number, incrementCount: () => void }>()
 
 </script>
 
 <template>
  <div>Child Component
     <div> {{count}}</div>
-    <button @click="updateCount">
+    <button @click="incrementCount">
       Increment  count
     </button> 
   </div>
@@ -102,7 +102,7 @@ Y podemos acceder al estado global, usando `store`, y mutarlo:
 ```js
 import { store } from "./store";
 
-const updateCount = () => {
+const incrementCount = () => {
   store.count++;
 };
 ```

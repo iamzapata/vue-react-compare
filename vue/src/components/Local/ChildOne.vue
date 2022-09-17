@@ -1,10 +1,12 @@
 <script setup lang="ts">
-defineProps<{ count: number; updateCount: () => void }>();
+import Button from "./Button.vue";
+
+defineProps<{ count: number; incrementCount: () => void }>();
 </script>
 
 <template>
   <div className="card">
     <h3>Child One: {{ count }}</h3>
-    <button @click="updateCount">Increment count</button>
+    <Button :incrementCount="incrementCount" />
   </div>
 </template>

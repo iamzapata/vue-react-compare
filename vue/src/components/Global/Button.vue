@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { store } from "./store";
 
-const updateCount = () => {
+const incrementCount = () => {
   store.count++;
 };
 </script>
 
 <template>
-  <button type="button" @click="updateCount">
+  <button type="button" @click="incrementCount">
     Increment <strong>global</strong> count
   </button>
 </template>

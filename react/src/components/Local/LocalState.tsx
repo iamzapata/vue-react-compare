@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChildOne } from "./ChildOne";
 import { ChildTwo } from "./ChildTwo";
 import { GlobalComponent } from "../Global/GlobalComponent";
+import { Button } from "./Button";
 
 export function Local() {
   const [count, setCount] = useState(0);
@@ -14,9 +15,7 @@ export function Local() {
     <div className="card">
       <h2>Parent ➡️ Child State: {count}</h2>
 
-      <button onClick={() => setCount((count) => count + 1)}>
-        Increment count
-      </button>
+      <Button incrementCount={incrementCount} />
 
       <ChildOne count={count} incrementCount={incrementCount} />
       <ChildTwo count={count} incrementCount={incrementCount} />
